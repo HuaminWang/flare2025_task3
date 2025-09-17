@@ -1,0 +1,23 @@
+BASE: ['train_small_segnet_fine_stage.yaml']
+FINE_MODEL_PATH: "checkpoints_dir/vote_pet_train_pet_02" # The path of the downloaded checkpoint directory.
+CHECK_POINT_NAME: "init_checkpoint.pth"
+COARSE_MODEL_PATH: "checkpoints_dir/CT_MR_TJU_init3" # The path of the downloaded checkpoint directory.
+COARSE_CHECK_POINT_NAME: "coarse_checkpoint.pth"
+FINETUNE: True
+
+DATASET:
+  DATASET_NAME: 'vote_fine_fintune_pet_lab4'
+  FINE:
+    SPLIT_PREPROCESS_PATH: [
+      'processed_data/fine/big_segnet/CT_4label',
+      'processed_data/fine/big_segnet/FakePET4lab',
+      'processed_data/fine/small_segnet/whm_stage3_vote_pet_lab4',
+    ]
+    PROPRECESS_PATH: "processed_data/fine/combined_data/small_segnet_fine_fintune_pet_vote_pet_ct_lab4"
+
+TRAIN:
+  EPOCHS: 200
+  WARMUP_EPOCHS: 10
+  BASE_LR: 1e-6
+  MIN_LR: 5e-8
+

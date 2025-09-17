@@ -1,0 +1,25 @@
+BASE: ["preprocess_base.yaml"]
+VERSION: "preprocess_step3_lld_fine"
+# final stage
+TRAINING_TYPE: 'fine'
+MR_DATA_PREPROCESS:
+  STAGE: 1
+
+INFERENCE:
+  IS_OVERWRITE_PREDICT_MASK: True
+  SAVE_SOFTMAX: False
+
+DATASET:
+  # TRAIN_IMAGE_PATH: 'voted_sample/train_PET_unlabeled_13/imageTr_top100'   # set preprocessed data save path
+  # TRAIN_MASK_PATH: 'voted_sample/train_PET_unlabeled_13/voted_lab_top100' # set preprocessed data lable save path
+  TRAIN_IMAGE_PATH: 'voted_sample/train_PET_unlabeled_4/imageTr_top100'   # set preprocessed data save path
+  TRAIN_MASK_PATH: 'voted_sample/train_PET_unlabeled_4/voted_lab_top100' # set preprocessed data lable save path
+  IS_ABDOMEN_CROP: False
+  COARSE:
+    # PROPRECESS_PATH: "processed_data/coarse/small_segnet/whm_stage3_vote_pet_lab13"
+    PROPRECESS_PATH: "processed_data/coarse/small_segnet/whm_stage3_vote_pet_lab4"
+  FINE:
+    # PROPRECESS_PATH: "processed_data/fine/small_segnet/whm_stage3_vote_pet_lab13"
+    PROPRECESS_PATH: "processed_data/fine/small_segnet/whm_stage3_vote_pet_lab4"
+    SIZE: [ 96, 192, 192 ]
+    PREPROCESS_SIZE: [ 192, 192, 96 ]

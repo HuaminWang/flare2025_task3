@@ -1,0 +1,15 @@
+after,before,Note
+0,0,background
+1,1,liver
+2,2,right_kidney
+3,3,spleen
+0,4,pancreas
+0,5,aorta
+0,6,inferior_vena_cava
+0,7,right_adrenal_gland
+0,8,left_adrenal_gland
+0,9,gallbladder
+0,10,esophagus
+0,11,stomach
+0,12,duodenum
+4,13,left_kidney

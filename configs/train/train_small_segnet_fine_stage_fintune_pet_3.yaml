@@ -1,0 +1,20 @@
+BASE: ['train_small_segnet_fine_stage.yaml']
+
+FINETUNE: True
+
+DATASET:
+  DATASET_NAME: 'CT_fakeMR_fine_fintune_pet_ct_mr'
+  FINE:
+    SPLIT_PREPROCESS_PATH: [
+      'processed_data/fine/big_segnet/CT_4label',
+     'processed_data/fine/big_segnet/FakeMR4lab',
+      'processed_data/fine/big_segnet/FakePET4lab',
+    ]
+    PROPRECESS_PATH: "processed_data/fine/combined_data/small_segnet_fine_fintune_pet_444"
+
+TRAIN:
+  EPOCHS: 200
+  WARMUP_EPOCHS: 10
+  BASE_LR: 1e-5
+  MIN_LR: 5e-7
+

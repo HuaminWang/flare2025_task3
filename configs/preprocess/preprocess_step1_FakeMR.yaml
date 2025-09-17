@@ -1,0 +1,20 @@
+BASE: ["preprocess_base.yaml"]
+
+TRAINING_TYPE: 'fine'
+# stage1 - preprocess
+MR_DATA_PREPROCESS:
+  STAGE: 1
+
+INFERENCE:
+  IS_OVERWRITE_PREDICT_MASK: True
+  SAVE_SOFTMAX: False
+
+VERSION: "preprocess_step1_FakeMR"
+
+# final stage
+DATASET:
+  TRAIN_IMAGE_PATH: 'MR/imagesTr'
+  TRAIN_MASK_PATH: 'MR/labelsTr4'
+  IS_ABDOMEN_CROP: False
+  FINE:
+    PROPRECESS_PATH: "processed_data/fine/big_segnet/FakeMR4lab"

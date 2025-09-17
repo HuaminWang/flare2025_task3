@@ -1,0 +1,15 @@
+TRAINING_TYPE: 'coarse-fine'  # this is small segnet demo. if using big segnet.this change to 'fine'
+FINE_MODEL_PATH: "checkpoints_dir/CT_MR_TJU_init3" # The path of the downloaded checkpoint directory.
+CHECK_POINT_NAME: "200_checkpoint.pth"
+COARSE_MODEL_PATH: "checkpoints_dir/CT_MR_TJU_init3" # The path of the downloaded checkpoint directory.
+COARSE_CHECK_POINT_NAME: "coarse_checkpoint.pth"
+
+MR_DATA_PREPROCESS:
+  ROOT_PATH: "/home/data3/whm/code/flare25/datasets" # The path of the current project datasets directory. please use absolute path!!! because we use symlink
+
+DATASET:
+  BASE_DIR: "/home/data3/whm/code/flare25/datasets"  # The path of the current project datasets directory. please use absolute path!!! because we use symlink
+
+VAL:
+  TTA: False
+  EVAL_OUTPUT_RESULT: "/temp"

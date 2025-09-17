@@ -1,0 +1,21 @@
+BASE: ["preprocess_base.yaml"]
+VERSION: "preprocess_step3_lld_fine"
+# final stage
+TRAINING_TYPE: 'fine'
+MR_DATA_PREPROCESS:
+  STAGE: 1
+
+INFERENCE:
+  IS_OVERWRITE_PREDICT_MASK: True
+  SAVE_SOFTMAX: False
+
+DATASET:
+  TRAIN_IMAGE_PATH: 'MR_PET/imagesTr'   # set preprocessed data save path
+  TRAIN_MASK_PATH: 'MR_PET/labelsTr' # set preprocessed data lable save path
+  IS_ABDOMEN_CROP: False
+  COARSE:
+    PROPRECESS_PATH: "processed_data/coarse/small_segnet/whm_stage3_mr_pet_01"
+  FINE:
+    PROPRECESS_PATH: "processed_data/fine/small_segnet/whm_stage3_mr_pet_01"
+    SIZE: [ 96, 192, 192 ]
+    PREPROCESS_SIZE: [ 192, 192, 96 ]

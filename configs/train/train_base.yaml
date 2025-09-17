@@ -1,0 +1,29 @@
+TRAINING_TYPE: 'fine'
+FINE_MODEL_PATH: "checkpoints_dir/pet_train_pet2_1_1" # The path of the downloaded checkpoint directory.
+CHECK_POINT_NAME: "final_checkpoint.pth"
+COARSE_MODEL_PATH: "checkpoints_dir/CT_MR_TJU_init3" # The path of the downloaded checkpoint directory.
+COARSE_CHECK_POINT_NAME: "coarse_checkpoint.pth"
+FINETUNE: False
+
+DATASET:
+  DATASET_NAME: 'fake_mr_pet_03'
+  BASE_DIR: "/home/data3/whm/code/flare25/datasets/" # The path of the current project datasets directory. # please use absolute path!!! because we use symlink
+  DA:
+    DO_MIRROR: True
+
+DATALOADER:
+  BATCH_SIZE: 1
+  NUM_WORKERS: 8
+
+TRAIN:
+  EPOCHS: 3
+  MULTI_TASK:
+    IS_OPEN: False
+    CLASS_NUM: 2
+  SELECT_IMPORT_VOXEL:
+    IS_OPEN: False
+    DROP_VOXEL: False
+    UPDATE_LOSS_WEIGHT: False
+
+LOSS:
+  FLARE24_CHANGE_WEIGHT: False

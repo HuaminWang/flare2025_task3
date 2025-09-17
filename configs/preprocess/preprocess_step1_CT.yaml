@@ -1,0 +1,24 @@
+BASE: ["preprocess_base.yaml"]
+
+TRAINING_TYPE: 'fine'
+# stage1 - preprocess
+MR_DATA_PREPROCESS:
+  STAGE: 1
+
+INFERENCE:
+  IS_OVERWRITE_PREDICT_MASK: True
+  SAVE_SOFTMAX: False
+
+VERSION: "preprocess_step1_CT"
+
+# final stage
+DATASET:
+  TRAIN_IMAGE_PATH: 'voted_sample/train_CT_pseudolabel/imageTr_top100'
+  # TRAIN_IMAGE_PATH: 'CT/CT_image'
+  # TRAIN_MASK_PATH: 'CT/CT_label'
+  TRAIN_MASK_PATH: 'voted_sample/train_CT_pseudolabel/voted_lab_top100'
+  # TRAIN_MASK_PATH: 'CT/CT_4label'
+  IS_ABDOMEN_CROP: False
+  FINE:
+    PROPRECESS_PATH: "processed_data/fine/big_segnet/CT_13label_vote"
+    # PROPRECESS_PATH: "processed_data/fine/big_segnet/CT_4label"

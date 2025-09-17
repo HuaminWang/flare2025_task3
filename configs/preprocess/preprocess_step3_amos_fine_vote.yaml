@@ -1,0 +1,21 @@
+BASE: ["preprocess_base.yaml"]
+VERSION: "preprocess_step3_amos_vote_fine"
+# final stage
+TRAINING_TYPE: 'fine'
+MR_DATA_PREPROCESS:
+  STAGE: 1
+
+INFERENCE:
+  IS_OVERWRITE_PREDICT_MASK: True
+  SAVE_SOFTMAX: False
+
+DATASET:
+  TRAIN_IMAGE_PATH: 'voted_sample/AMOS-833/imageTr_top100'
+  TRAIN_MASK_PATH: 'voted_sample/AMOS-833/voted_lab_top100'
+  IS_ABDOMEN_CROP: False
+  COARSE:
+    PROPRECESS_PATH: "processed_data/coarse/small_segnet/MR_amos_stage3_vote"
+  FINE:
+    PROPRECESS_PATH: "processed_data/fine/small_segnet/MR_amos_stage3_vote"
+    SIZE: [ 96, 192, 192 ]
+    PREPROCESS_SIZE: [ 192, 192, 96 ]
