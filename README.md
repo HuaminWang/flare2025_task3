@@ -1,6 +1,6 @@
 # Solution for Flare2025 Task3(Runner-up Award)
 
-This repository is the official implementation of [Unsupervised Domain Adaptation for Cross-modality Abdominal Organ Segmentation via Organ Attention Style Transfer and Dual-stage Pseudo Label Filtering](https://openreview.net/forum?id=dr1h6OOthW) of Team hilab on FLARE 2025 task 3 challenge.
+This repository is the official implementation of [Unsupervised Domain Adaptation for Cross-modality Abdominal Organ Segmentation via Organ Attention Style Transfer and Dual-stage Pseudo Label Filtering](https://openreview.net/forum?id=IA6PlTBxch) of Team hilab on FLARE 2025 task 3 challenge.
 
 
 ## Style Translation
